@@ -1,0 +1,17 @@
+CREATE DATABASE courier_system;
+
+USE courier_system;
+
+CREATE TABLE shipments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(255) NOT NULL,
+    address TEXT NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    state VARCHAR(100) NOT NULL,
+    pincode VARCHAR(10) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    weight FLOAT NOT NULL,
+    awb_number VARCHAR(20) UNIQUE NOT NULL,
+    status VARCHAR(50) DEFAULT 'Booked',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
